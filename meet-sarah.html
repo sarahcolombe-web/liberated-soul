@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Sarah | Liberated Soul</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F0;
+            --warm-white: #FFFEF9;
+            --sage: #2D3436;
+            --deep-sage: #1a1a1a;
+            --earth: #A67C52;
+            --charcoal: #2D3436;
+            --soft-shadow: rgba(45, 52, 54, 0.08);
+            --accent-gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background-color: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 247, 240, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #292524;
+            text-decoration: none;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 300;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #000000;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background-color: #000000;
+            color: var(--warm-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--soft-shadow);
+        }
+
+        .cta-button:hover {
+            background-color: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .about-sarah {
+            padding: 8rem 3rem 6rem;
+            background: linear-gradient(to bottom, var(--warm-white), var(--cream));
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            box-shadow: 0 10px 40px var(--soft-shadow);
+        }
+
+        footer {
+            padding: 4rem 3rem 3rem;
+            background: var(--warm-white);
+            color: var(--charcoal);
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        footer h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #000000;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 1024px) {
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Liberated Soul</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-spiritual-direction.html">About Spiritual Direction</a></li>
+                <li><a href="meet-sarah.html">Meet Sarah</a></li>
+                <li><a href="offerings.html">Offerings</a></li>
+                <li><a href="https://liberatedsoul.as.me/existing" target="_blank">Existing Directees</a></li>
+                <li><a href="https://liberatedsoul.as.me/?appointmentType=category:Students" target="_blank">Student Directees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Sarah Section -->
+    <section class="about-sarah">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Meet Sarah</h2>
+                <p>Hi, I'm Sarah. A few years ago I learned about the art of spiritual direction, and realized I had been drawn to this work all my life. Becoming a spiritual director was like finding a missing piece that helped everything else make sense.</p>
+                <p>I believe that each person's spiritual journey is unique and sacred. My role as a spiritual director is to walk alongside you, offering a compassionate presence and helping you pay attention to how God is moving in your life.</p>
+                <p>Whether you're navigating questions about faith, seeking deeper connection with the divine, or simply looking for a companion on your spiritual path, I'm here to support you.</p>
+                <p>My approach to spiritual direction is grounded in deep listening, openness, and a belief in the inherent worth and wisdom within each person. Together, we create a safe space for you to explore your relationship with God and discover the unique ways the sacred is present in your life.</p>
+                <a href="contact.html" class="cta-button">Get In Touch</a>
+            </div>
+            <div class="about-image">
+                <img src="images/sarah2.jpg" alt="Sarah, Spiritual Director">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem;">Liberated Soul</h3>
+        <p>&copy; 2026 Liberated Soul</p>
+    </footer>
+</body>
+</html>
